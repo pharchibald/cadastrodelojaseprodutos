@@ -1,50 +1,32 @@
-# Welcome to your Expo app 👋
+# 🏺 Atelier Retail - Cadastro de Lojas e Produtos
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Sistema premium de gestão patrimonial e inventário para redes de varejo, desenvolvido com foco em alta performance e design sofisticado.
 
-## Get started
+## 🎨 Identidade Visual (Tema Atelier)
+O projeto utiliza uma paleta de cores personalizada para transmitir exclusividade e organização:
+* **Primária:** Marrom Café (#42362E) para ações principais e botões.
+* **Secundária:** Creme Suave (#F9F7F5) para fundos e superfícies.
+* **Destaque:** Off-white (#FFFFFF) e tons terrosos para tipografia.
 
-1. Install dependencies
+## 🚀 Funcionalidades Principais
+* **Gestão de Unidades:** Cadastro e listagem de lojas com endereçamento dinâmico.
+* **Controle de Inventário:** Gerenciamento de produtos por unidade, com suporte a preços decimais.
+* **Interface Responsiva:** Utilização de Gluestack UI para uma experiência fluida em mobile.
+* **Persistência de Dados:** Estado centralizado para garantir integridade das informações entre telas.
 
+## 🛠️ Stack Técnica
+* **Framework:** React Native com Expo Router.
+* **UI Kit:** Gluestack UI (v2).
+* **Linguagem:** TypeScript (100% tipado, sem erros de atribuição).
+* **Ícones:** Lucide-react-native.
+
+## 🔧 Ajustes Técnicos Realizados
+Durante o desenvolvimento, foram aplicadas correções críticas para garantir a estabilidade:
+1.  **TypeScript Refactor:** Correção do erro `ts(2322)` ao converter propriedades de estilo numéricas para tokens de string do Gluestack.
+2.  **JSX Integrity:** Resolução de erros de fechamento de tags em componentes complexos de Modal e VStack.
+3.  **Data Formatting:** Implementação de tratamento para evitar valores `NaN` em campos de preço, utilizando formatação decimal rigorosa.
+
+## 📦 Como rodar o projeto
+1. Clone o repositório:
    ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+   git clone [https://github.com/pharchibald/CADASTRO-DE-LOJAS-E-PRODUTOS.git](https://github.com/pharchibald/CADASTRO-DE-LOJAS-E-PRODUTOS.git)
