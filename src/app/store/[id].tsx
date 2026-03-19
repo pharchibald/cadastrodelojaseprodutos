@@ -43,10 +43,12 @@ export default function ProductListScreen() {
 
   return (
     <Box flex={1} style={{ backgroundColor: '#F9F7F5' }}>
-      {/* Header Premium - Corrigido do azul para Atelier */}
+      {/* Header Atelier */}
       <Box p="$10" pt="$20" style={{ backgroundColor: '#FFFFFF' }} hardShadow="1">
         <HStack space="md" alignItems="center">
-          <Pressable onPress={() => router.back()}><Icon as={ArrowLeftIcon} color="#2D241E" /></Pressable>
+          <Pressable onPress={() => router.back()}>
+            <Icon as={ArrowLeftIcon} color="#2D241E" />
+          </Pressable>
           <VStack>
             <Heading size="md" style={{ color: '#2D241E', textTransform: 'uppercase' }}>{store.name}</Heading>
             <Text size="xs" style={{ color: '#8A7A71', fontWeight: 'bold' }}>CONTROLE DE INVENTÁRIO</Text>
@@ -66,8 +68,12 @@ export default function ProductListScreen() {
                 <Text size="xs" style={{ color: '#8A7A71' }}>REF: {item.id.slice(0,6).toUpperCase()}</Text>
               </VStack>
               <HStack space="lg" alignItems="center">
-                <Text fontWeight="$bold" style={{ color: '#42362E' }}>R$ {Number(item.price || 0).toFixed(2)}</Text>
-                <Pressable onPress={() => removeProduct(store.id, item.id)}><Icon as={Trash2} color="#D1C7C1" size="sm" /></Pressable>
+                <Text fontWeight="$bold" style={{ color: '#42362E' }}>
+                  R$ {Number(item.price || 0).toFixed(2)}
+                </Text>
+                <Pressable onPress={() => removeProduct(store.id, item.id)}>
+                  <Icon as={Trash2} color="#D1C7C1" size="sm" />
+                </Pressable>
               </HStack>
             </HStack>
           </Box>
@@ -78,14 +84,16 @@ export default function ProductListScreen() {
         <FabIcon as={AddIcon} />
       </Fab>
 
-      {/* Modal de Produtos - Agora no estilo Atelier */}
+      {/* Modal Atelier Corrigido */}
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <ModalBackdrop />
         <ModalContent style={{ borderRadius: 32, backgroundColor: '#FFFFFF' }} p="$4">
           <ModalHeader borderBottomWidth="$0" justifyContent="center">
              <VStack alignItems="center" space="md" py="$4">
-                <Box p="$3" style={{ backgroundColor: '#F4F1EE', borderRadius: 12 }}><Icon as={Tag} style={{ color: '#2D241E' }} /></Box>
-                <Heading size="xl" style={{ color: '#2D241E' }}>Novo Produto</Heading>
+                <Box p="$3" style={{ backgroundColor: '#F4F1EE', borderRadius: 12 }}>
+                   <Icon as={Tag} style={{ color: '#2D241E' }} />
+                </Box>
+                <Heading size="xl" style={{ color: '#2D241E' }}>Novo Registro</Heading>
              </VStack>
           </ModalHeader>
           <ModalBody>
@@ -93,11 +101,11 @@ export default function ProductListScreen() {
               <VStack space="xs">
                 <Text size="xs" fontWeight="$bold" style={{ color: '#2D241E' }}>DESCRIÇÃO</Text>
                 <Input style={{ backgroundColor: '#F4F1EE', borderWidth: 0, borderRadius: 12, height: 55 }}>
-                  <InputField placeholder="Nome do item" value={name} onChangeText={setName} />
+                  <InputField placeholder="Nome do produto" value={name} onChangeText={setName} />
                 </Input>
               </VStack>
               <VStack space="xs">
-                <Text size="xs" fontWeight="$bold" style={{ color: '#2D241E' }}>VALOR UNITÁRIO</Text>
+                <Text size="xs" fontWeight="$bold" style={{ color: '#2D241E' }}>VALOR (R$)</Text>
                 <Input style={{ backgroundColor: '#F4F1EE', borderWidth: 0, borderRadius: 12, height: 55 }}>
                   <InputField placeholder="0.00" keyboardType="numeric" value={price} onChangeText={setPrice} />
                 </Input>
@@ -106,7 +114,7 @@ export default function ProductListScreen() {
           </ModalBody>
           <ModalFooter borderTopWidth="$0">
             <Button onPress={handleSave} style={{ backgroundColor: '#42362E', borderRadius: 12, width: '100%', height: 55 }}>
-              <ButtonText>Adicionar ao Estoque →</ButtonText>
+              <ButtonText>Salvar no Inventário →</ButtonText>
             </Button>
           </ModalFooter>
         </ModalContent>
